@@ -6,6 +6,8 @@ test('амжилттай нэвтрэх', async ({ page }) => {
   await page.getByPlaceholder('Password').fill('secret_sauce');
   await page.getByRole('button', { name: 'Login' }).click();
   await expect(page.getByText('Products')).toBeVisible();
+  await page.getByRole('button', { name: 'Open Menu' }).click();
+  await page.getByText('Logout').click();
 });
 
 test('амжилтгүй нэвтрэх', async ({ page }) => {
